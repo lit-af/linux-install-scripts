@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+sudo apt install -y cmake
 OWNER="danmar"
 REPO="cppcheck"
 LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/$OWNER/$REPO/releases/latest/)

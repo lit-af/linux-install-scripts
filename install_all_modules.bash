@@ -5,17 +5,19 @@ cd modules/
 
 # Drivers
 ./nvidia_driver_install.bash
-./killer_wifi_6e_ax1675_driver_install.bash
+#./killer_wifi_6e_ax1675_driver_install.bash
 
 # Generic Software
 ./google_chrome_install.bash
-./slack_install.bash
+#./slack_install.bash
 
 # Generic Tools
 sudo apt install -y openssh-server
+sudo snap install pdfarranger
 ./speedtest_cli_install.bash
 ./obs_studio_install.bash
 ./flameshot_install.bash
+./ubuntu_22_tweaks.bash
 
 # Developer Tools
 sudo apt install -y git git-lfs gcc-10 libstdc++-10-dev
@@ -25,7 +27,7 @@ sudo apt install -y git git-lfs gcc-10 libstdc++-10-dev
 ./terminator_install.bash
 
 # Robotics Tools
-./ros_install.bash
-./gazebo_fortress_install.bash
+#./ros_install.bash
+#./gazebo_fortress_install.bash
 
 cd ../

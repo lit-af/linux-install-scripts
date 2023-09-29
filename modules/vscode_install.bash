@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
-sudo apt install -y software-properties-common apt-transport-https wget
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code
-code --install-extension vscode-icons-team.vscode-icons
-code --install-extension ms-python.python
-code --install-extension ms-vscode.cpptools-extension-pack
-code --install-extension redhat.vscode-xml
-code --install-extension compulim.compulim-vscode-closetag
-code --install-extension ms-iot.vscode-ros
-code --install-extension jeff-hykin.better-cpp-syntax
-code --install-extension llvm-vs-code-extensions.vscode-clangd
-code --install-extension ms-vscode.cmake-tools
-code --install-extension matepek.vscode-catch2-test-adapter
-code --install-extension hbenl.vscode-test-explorer
-code --install-extension vortizhe.simple-ruby-erb
+sudo apt install -y curl
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+sudo apt-get update
+sudo apt-get install -y code
