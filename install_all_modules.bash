@@ -20,14 +20,22 @@ sudo snap install pdfarranger
 ./ubuntu_22_tweaks.bash
 
 # Developer Tools
-sudo apt install -y git git-lfs gcc-10 libstdc++-10-dev
+sudo apt install -y git git-lfs 
+sudo apt install -y gcc-10 libstdc++-10-dev
+./azure_sphere_sdk.bash
+./nrf-connect-sdk.bash
 ./github_cli_install.bash
+./gitlab_cli_install.bash
 ./vscode_install.bash
 ./cppcheck_install.bash
 ./terminator_install.bash
+./docker.bash
+./oh-my-zsh.bash
 
 # Robotics Tools
-#./ros_install.bash
-#./gazebo_fortress_install.bash
+# ./ros_install.bash
+# ./gazebo_fortress_install.bash
 
 cd ../
+
+echo "INFO: Installation complete. Rebooting is strongly suggested"
