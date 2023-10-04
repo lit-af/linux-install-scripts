@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
-NRF_RELEASE="v2.4.2"
-ZEPHYR_RELEASE="0.16.1"
+
+OWNER="nrfconnect"
+REPO="sdk-nrf"
+LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/$OWNER/$REPO/releases/latest/)
+LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
+LATEST_VERSION_NUMBER=$(echo $LATEST_VERSION | sed 's/v//')
+
+ZEPHYR_SDK_NG_RELEASE="0.16.1"
 
 NRF_CLI_TOOLS_VERSION_NUM_MASTER=10
 NRF_CLI_TOOLS_VERSION_NUM_SUB=23
@@ -25,7 +31,7 @@ echo 'export PATH=~/.local/bin:"$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 ## Get the nRF Connect SDK code
-west init -m https://github.com/nrfconnect/sdk-nrf --mr $LATEST_RELEASE
+west init -m https://github.com/nrfconnect/sdk-nrf --mr $LATEST_VERSION
 west update
 west zephyr-export
 
@@ -40,13 +46,13 @@ yes | pip install -r bootloader/mcuboot/scripts/requirements.txt
 
 ## Install the Zephyr RTOS SDK
 cd ~
-wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v$ZEPHYR_RELEASE/zephyr-sdk-$ZEPHYR_RELEASE\_linux-x86_64.tar.xz
-wget -O - https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v$ZEPHYR_RELEASE/sha256.sum | shasum --check --ignore-missing
-yes | tar xf zephyr-sdk-$ZEPHYR_RELEASE\_linux-x86_64.tar.xz
-cd zephyr-sdk-$ZEPHYR_RELEASE
+wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v$ZEPHYR_SDK_NG_RELEASE/zephyr-sdk-$ZEPHYR_SDK_NG_RELEASE\_linux-x86_64.tar.xz
+wget -O - https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v$ZEPHYR_SDK_NG_RELEASE/sha256.sum | shasum --check --ignore-missing
+yes | tar xf zephyr-sdk-$ZEPHYR_SDK_NG_RELEASE\_linux-x86_64.tar.xz
+cd zephyr-sdk-$ZEPHYR_SDK_NG_RELEASE
 yes | ./setup.sh
 
-sudo cp ~/zephyr-sdk-$ZEPHYR_RELEASE/sysroots/x86_64-pokysdk-linux/usr/share/openocd/contrib/60-openocd.rules /etc/udev/rules.d
+sudo cp ~/zephyr-sdk-$ZEPHYR_SDK_NG_RELEASE/sysroots/x86_64-pokysdk-linux/usr/share/openocd/contrib/60-openocd.rules /etc/udev/rules.d
 sudo udevadm control --reload
 
 # Install nRF command line tools

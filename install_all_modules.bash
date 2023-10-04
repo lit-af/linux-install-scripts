@@ -18,6 +18,8 @@ sudo snap install pdfarranger
 ./obs_studio_install.bash
 ./flameshot_install.bash
 ./ubuntu_22_tweaks.bash
+./grub_theme.bash
+./balenaEtcher.bash
 
 # Developer Tools
 sudo apt install -y git git-lfs 
