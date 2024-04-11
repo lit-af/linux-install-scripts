@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-sudo add-apt-repository ppa:mattrose/terminator -y
-sudo apt-get update
 sudo apt install terminator -y
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
