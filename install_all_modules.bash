@@ -22,7 +22,7 @@ sudo snap install pdfarranger
 
 # Developer Tools
 sudo apt install -y git git-lfs 
-#sudo apt install -y gcc-10 libstdc++-10-dev
+sudo apt install -y gcc-12 libstdc++-12-dev
 ./azure_sphere_sdk.bash
 #./nrf-connect-sdk.bash
 ./github_cli_install.bash
