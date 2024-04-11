@@ -10,6 +10,7 @@ cd modules/
 # Generic Software
 ./google_chrome_install.bash
 #./slack_install.bash
+./microsoft-teams.bash
 
 # Generic Tools
 sudo apt install -y openssh-server
