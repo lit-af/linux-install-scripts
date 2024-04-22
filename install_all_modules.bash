@@ -10,21 +10,21 @@ cd modules/
 # Generic Software
 ./google_chrome_install.bash
 #./slack_install.bash
-./microsoft-teams.bash
+./teams-for-linux.bash
 
 # Generic Tools
 sudo apt install -y openssh-server
 sudo snap install pdfarranger
 ./speedtest_cli_install.bash
 #./obs_studio_install.bash
-./flameshot_install.bash
+#./flameshot_install.bash
 ./grub_theme.bash
-./balenaEtcher.bash
+#./balenaEtcher.bash
 
 # Developer Tools
 sudo apt install -y git git-lfs 
 sudo apt install -y gcc-12 libstdc++-12-dev
-./azure_sphere_sdk.bash
+#./azure_sphere_sdk.bash
 #./nrf-connect-sdk.bash
 ./github_cli_install.bash
 ./gitlab_cli_install.bash
@@ -35,7 +35,6 @@ sudo apt install -y gcc-12 libstdc++-12-dev
 ./oh-my-zsh.bash
 
 # Customizations
-./ubuntu_22_tweaks.bash
 
 # Robotics Tools
 # ./ros_install.bash
