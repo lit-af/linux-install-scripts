@@ -22,6 +22,7 @@ sudo snap install pdfarranger
 #./balenaEtcher.bash
 
 # Developer Tools
+sudo apt install -y ninja-build
 sudo apt install -y git git-lfs 
 sudo apt install -y gcc-12 g++-12 libstdc++-12-dev gcovr
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12
