@@ -11,7 +11,7 @@ cd $REPO-$LATEST_VERSION
 mkdir build
 cd build
 sudo apt install -y qttools5-dev
-cmake -DBUILD_GUI=ON -DUSE_MATCHCOMPILER=ON -DCMAKE_BUILD_TYPE=Release ..
+cmake -DBUILD_GUI=ON -DCMAKE_BUILD_TYPE=Release ..
 cmake --build .
 sudo cmake --install . --config Release
 cd ../../
