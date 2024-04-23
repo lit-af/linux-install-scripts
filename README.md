@@ -8,23 +8,33 @@ Tested on Ubuntu Focal 20.04 LTS
 ### Generic Software
 - Google Chrome
 - Slack Desktop
+- teams-for-linux
 
 ### Generic Tools
 - SSH server
 - SpeedTest.net cli
 - OBS Studio
 - Flameshot (screenshot software)
+- BalenaEtcher
+- Terminator
+- Oh-my-zsh
 
 ### Developer Tools
+- CppCheck (with GUI)
+- Docker
 - git
 - git-lfs
 - GitHub cli
-- Visual Studio Code (with extensions)
-- CppCheck (with GUI)
+- GitLab cli
+- Visual Studio Code
 
 ### Robotics Tools
 - ROS
 - Gazebo Fortress (from sources)
+
+### Customisations
+- middle click paste disable
+- grub whitesur theme
 
 ## Usage
 ### Install all modules

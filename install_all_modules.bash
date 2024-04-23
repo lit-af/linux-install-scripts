@@ -33,7 +33,7 @@ sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-12 12
 ./github_cli_install.bash
 ./gitlab_cli_install.bash
 ./vscode_install.bash
-# ./cppcheck_install.bash
+./cppcheck_install.bash
 ./terminator_install.bash
 ./docker.bash
 ./oh-my-zsh.bash
